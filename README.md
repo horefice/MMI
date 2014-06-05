@@ -1,6 +1,6 @@
 MMI
 ===
-Working :)<br />
+Working :)<br /><br />
 Still needed after copying these files: Install PureData Extended, Processing, Synapse (all free)<br />
 Instalation: Move the folder oscp5 to the folder 'libraries' inside 'processing' folder<br />
 How to use: Conect Kinect, open Synapse, open and run any file inside SynapseReceiver folder, stay in front of kinect and make a "trident" or a "psi"<br />
