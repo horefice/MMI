@@ -8,4 +8,6 @@ Results: You will see in the white screen a beautiful sketch of what is recogniz
 
 Links to download: Synapse (http://synapsekinect.tumblr.com/post/6305020721/download)<br />
 PureData Extended (http://puredata.info/downloads)<br />
-Processing (https://www.processing.org/download/)
+Processing (https://www.processing.org/download/)<br />
+
+Also: library Speech-to-text: (http://stt.getflourish.com)
