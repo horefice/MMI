@@ -82,6 +82,8 @@ void draw() {
   fill(0);
   text(result, mouseX, mouseY);
   skeleton.update(oscP5);
+  
+ // update and draw the skeleton if it's being tracked
  if(skeleton.isTracking()) {
 
      PVector v;  // a temp vector to use for joint positions
@@ -165,19 +167,14 @@ void draw() {
      rect(v.x, v.y, 40, 20);
 
    // draw a red circle on the closest hand
-   noStroke();
+   /*noStroke();
    fill(255, 0, 0);
    v = skeleton.getJoint("closesthand").posScreen;
-   ellipse(v.x, v.y, 10, 10);
+   ellipse(v.x, v.y, 10, 10);*/
 
    //println(skeleton.toString());
    }
-
-
  }
-
- // update and draw the skeleton if it's being tracked
-
 }
 
 // OSC CALLBACK FUNCTIONS
