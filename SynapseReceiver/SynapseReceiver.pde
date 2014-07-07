@@ -20,6 +20,7 @@ import com.getflourish.stt.*;
 STT stt;
 String result;
 String danced;
+int m;
 
 //Our code
 PFont f;
@@ -29,7 +30,7 @@ float button_y = 300;
 float button_w = 200;
 float button_h = 80;
 
-int screen; //0=Main menu, 1=Game Running, 2=Game Over
+int screen; //0=Main menu, 1=Game
 
 
 // our Synapse tracked skeleton data
@@ -95,18 +96,10 @@ case 0:
       {
          {
          danced="cat";
-         //CHAMAR METODO FIM
        }
       }
    }
-
-  //analisar o corpo
-  //se dancou a letra da vez, atualizar danced
  }
- //
-
-// update and draw the skeleton if it's being tracked
-
 }
 }
 
@@ -136,18 +129,22 @@ public void draw_infos()
  fill(0);
  if(result!=null && danced!="cat") 
  {
+   m = millis();
  text("You said: " + result, 100, 50);
 
  text("You danced: " + danced, 300, 50);
  }
  else if(danced == "cat") {
-   text("You did it!!!",150,50); 
+   text("You did it !!! Time used: " + m/1000 + "s",150,50); 
  }
  else
  {
     text("Hold a button and Say something!",100,50); 
  }
 }
+
+
+// update and draw the skeleton if it's being tracked
 public void draw_body()
 {
   if(skeleton.isTracking()) {
@@ -232,12 +229,6 @@ public void draw_body()
     endShape();
     rect(v.x, v.y, 40, 20);
 
-  // draw a red circle on the closest hand
-  /*noStroke();
-  fill(255, 0, 0);
-  v = skeleton.getJoint("closesthand").posScreen;
-  ellipse(v.x, v.y, 10, 10);*/
-
   //println(skeleton.toString());
   }
 }
@@ -291,9 +282,8 @@ void transcribe (String utterance, float confidence)
 
 // Use any key to begin and end a record
 public void keyPressed () {
- //stt.begin();
- result = "cat";
+ stt.begin();
 }
 public void keyReleased () {
- //stt.end();
+ stt.end();
 }
