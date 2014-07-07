@@ -70,7 +70,7 @@ void draw() {
 
       if(mousePressed)
         {
-           if(mouseX>button_x && mouseX <button_x+button_w && mouseY>button_y && mouseY <button_y+button_h)
+           if(mouseX > (button_x - button_w/2) && mouseX < (button_x + button_w/2) && mouseY > (button_y - button_h/2) && mouseY < (button_y + button_h/2))
            {
                   println("The mouse is pressed and over the button");
                   screen=1;
@@ -192,7 +192,7 @@ void oscEvent(OscMessage m) {
 void transcribe (String utterance, float confidence) 
 {
   println(utterance);
-  result = utterance;
+  result = "";
 }
  
 // Use any key to begin and end a record
