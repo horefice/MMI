@@ -47,8 +47,8 @@ void setup() {
 
  // Some text to display the result
  textFont(createFont("Arial", 24,true));
- result = null;
- danced="";
+ result = "";
+ danced = "";
  oscP5 = new OscP5(this, 12345);
 
  //Our code
@@ -70,9 +70,9 @@ case 0:
  skeleton.update(oscP5);
  draw_infos();
  draw_body();
- if(result=="cat")
+ //println(result);
+ if(result.equals("cat"))
  {
-
    if(danced=="")
    {
        if(analyze_body("c"))
@@ -127,7 +127,7 @@ public void draw_menu()
 public void draw_infos()
 {
  fill(0);
- if(result!=null && danced!="cat") 
+ if(result!="" && danced!="cat") 
  {
    m = millis();
  text("You said: " + result, 100, 50);
